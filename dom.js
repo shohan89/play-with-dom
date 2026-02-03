@@ -26,3 +26,9 @@ addBtn.addEventListener('click', () => {
     // clear the input field
     inputText.value = '';
 })
+
+// remove the last item from the list
+removeBtn.addEventListener('click', ()=> {
+    const lastItem = ulList.lastChild;
+    ulList.removeChild(lastItem);
+})
