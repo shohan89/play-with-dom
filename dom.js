@@ -14,7 +14,7 @@ addBtn.addEventListener('click', () => {
     const text = inputText.value.trim();
     // check if input is empty
     if (!text) {
-        alert('Please enter some text to add an item.');
+        return alert('Please enter some text to add an item.');
     }
     // create a new li element
     const li = document.createElement('li');
@@ -31,4 +31,16 @@ addBtn.addEventListener('click', () => {
 removeBtn.addEventListener('click', ()=> {
     const lastItem = ulList.lastChild;
     ulList.removeChild(lastItem);
+})
+
+// change innerHTML of the list
+changeHTMLBtn.addEventListener('click', () => {
+    const text = inputText.value.trim();
+
+    // check if input is empty
+    if (!ulList.firstElementChild || !text) {
+        return alert('Please enter some text to change innerHTML.');
+    }
+    ulList.firstElementChild.innerHTML = `<b>${text}</b>`;
+    inputText.value = '';
 })
