@@ -44,3 +44,15 @@ changeHTMLBtn.addEventListener('click', () => {
     ulList.firstElementChild.innerHTML = `<b>${text}</b>`;
     inputText.value = '';
 })
+
+// change style of the first item in the list
+changeStyleBtn.addEventListener('click', () => {
+    const firstItem = ulList.firstElementChild;
+
+    // check if the first item exists
+    if (!firstItem) {
+        return alert('No items in the list to change style.');
+    }
+    firstItem.style.color = 'white';
+    firstItem.style.backgroundColor = 'teal';
+})
